@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contanier {
+  border: 10px double red;
+  font-size: 1.5rem;
+  /* border-top: 5px solid green;
+  border-right: 10px dotted blue; */
+  margin: 1.5em 2em 3em;
+  padding: 1.5em;
+  outline: 10px dotted greenyellow;
+  outline-offset: -20px;
+}
+.circle {
+  margin: 0 auto;
+  background-color: palevioletred;
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+  border-radius: 50%;
+  outline: 2px solid red;
+  outline-offset: 0.25rem;
+}
