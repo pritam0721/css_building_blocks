@@ -30,21 +30,22 @@ button {
   --FS: clamp(1rem, 2.2vh, 1.5rem);
 
   /* COLORS */
-  --BGCOLOR: orange;
   --BGCOLOR-FADE: rgb(252, 220, 160);
+  --BGCOLOR: orange;
   --BGIMAGE: linear-gradient(to bottom, var(--BGCOLOR), var(--BGCOLOR-FADE));
   --BODY-BGCOLOR: #fff;
-  --FONT-COLOR: #000;
   --BORDER-COLOR: #333;
-  --HIGHLIGHT-COLOR: rgb(51, 178, 51);
-  --LINK-COLOR: #000;
-  --LINK-HOVER: hsla(0, 0%, 0%, 0.6);
-  --LINK-ACTVE: orange;
+  --BUTTON-COLOR:#FFF;
+  --FONT-COLOR: #000;
   --HEADER-BGCOLOR: #000;
   --HEADER-COLOR: #fff;
-  --NAV-BGCOLOR: #fff;
   --HERO-BGCOLOR: rgba(51, 178, 51, 0.75);
   --HERO-COLOR: #fff;
+  --HIGHLIGHT-COLOR: rgb(51, 178, 51);
+  --LINK-ACTVE: orange;
+  --LINK-COLOR: #000;
+  --LINK-HOVER: hsla(0, 0%, 0%, 0.6);
+  --NAV-BGCOLOR: #fff;
 
   /* BORDERS */
   --BORDERS: 1px solid var(--BORDER-COLOR);
@@ -56,7 +57,24 @@ button {
   /* STANDARAD MARGIN */
   --MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
 }
-
+/* || DARK MODE */
+@media (prefers-color-scheme: dark) {
+  :root{
+    --BGCOLOR-FADE:grey;
+    --BGCOLOR:#000;
+    --BODY-BGCOLOR:#333;
+    --BORDER-COLOR:whitesmoke;
+    --BUTTON-COLOR:#000;
+    --FONT-COLOR:whitesmoke;
+    --HEADER-COLOR:whitesmoke;
+    --HERO-COLOR:#333;
+    --HIGHLIGHT-COLOR:whitesmoke;
+    --LINK-ACTVE:rgb(252,200,103); 
+    --LINK-COLOR:whitesmoke;
+    --LINK-HOVER: orange;
+    --NAV-BGCOLOR:rgb(20,20,20);
+  }
+}
 /* UTILITY CLASS */
 .offscreen {
   position: absolute;
@@ -240,7 +258,8 @@ a:active {
   padding: 0.5rem;
   border-radius: 15px;
   background-color: var(--HIGHLIGHT-COLOR);
-  color: var(--HEADER-COLOR);
+  color: var(--BUTTON-COLOR);
+  font-weight: bold;
 }
 
 /* ||MENU */
@@ -297,35 +316,41 @@ tr {
   border: medium ridge var(--BORDER-COLOR);
 }
 
-.menu__item{
+.menu__item {
   display: grid;
   place-content: center;
 }
-thead th:first-child{
-  border-top-left-radius: 15px ;
+thead th:first-child {
+  border-top-left-radius: 15px;
 }
-thead th:last-child{
-  border-top-right-radius: 15px ;
+thead th:last-child {
+  border-top-right-radius: 15px;
 }
-tfoot td{
+tfoot td {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-.menu__footer ,.hours__footer{
-  margin-top: 1rem ;
+.menu__footer,
+.hours__footer {
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
 }
 
-
 /* MEDIA QUERIES */
 
-@media screen and (min-width:576px) {
-  .header__h1::before{
-    content: '🌮';
+@media screen and (min-width: 576px) {
+  .header__h1::before {
+    content: "🌮";
   }
-  .header__h1::after{
-    content: ' 🌮';
+  .header__h1::after {
+    content: " 🌮";
   }
+  .menu__cr,
+  .menu__sf,
+  .menu__cs,
+  .menu__header {
+   font-size: 125%;
   
+  }
 }
